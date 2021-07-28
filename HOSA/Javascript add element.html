@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<body>
+    <div>
+        hi
+    </div>
+</body>
+
+<script>
+
+var keypad = document.createElement("div");
+
+//wrap the whole code for the input fields into an array, it will be converted into a string later
+var inputFields = [<input type="button" value="7" onclick="number('num').value+=7;"class="number"/>
+<input type="button" value="8" onclick="number('num').value+=8;" class="number"/>
+<input type="button" value="9" onclick="number('num').value+=9;" class="number"/><br/>
+<input type="button" value="4" onclick="number('num').value+=4;" class="number"/>
+<input type="button" value="5" onclick="number('num').value+=5;" class="number"/>
+<input type="button" value="6" onclick="number('num').value+=6;" class="number"/><br/>
+<input type="button" value="1" onclick="number('num').value+=1;" class="number"/>
+<input type="button" value="2" onclick="number('num').value+=2;" class="number"/>
+<input type="button" value="3" onclick="number('num').value+=3;" class="number"/><br/>
+<input type="button" value="X" onclick="number('keypad').style.display='none'"class="number"/>
+<input type="button" value="0" onclick="number('num').value+=0;" class="number"/>
+<input type="button" value="&larr;" 
+onclick="number('num').value=number('num').value.substr(0,number('num').value.length-1);" class="number"/>];
+
+/*The join() method converts all array elements to strings and concatenates them.
+join() takes optional character or string as argument that is used to separate one element of the array from the next in the returned string. If this argument is omitted, a comma is used.*/
+
+keypad.innerHTML = inputFields.join("");
+
+//add the created div to the body
+document.body.appendChild(keypad);
+</script>

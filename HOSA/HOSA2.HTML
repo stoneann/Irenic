@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        <div class="box">
+            <div id="div1" class="row content" onClick="toggleDisplay('Welcome'); toggleDisplay('feelings1'); toggleDisplay('feelingsInput'); toggleDisplay('feelingsButton'); toggleClick('feelingsButton', 'div1')">
+                <img id="animate" src="https://irp-cdn.multiscreensite.com/0e5c5b66/dms3rep/multi/mobile/animated-cloud-right-to-left-350x211-350x211.png" alt="cloud" height="50" weight="50">
+                <!-- WELCOME PAGE -->
+                <div id="Welcome">
+                    Hello!<br>Welcome to Irenic
+                </div>
+                <!-- FEELINGS PAGE 1 -->
+                <div id="feelings1" style="display: none">How are you feeling today?</div>
+                <div id="feelingsInput" style="display: none"><input type="text" value="feelings"></div>
+                <div id="feelingsButton" style="display: none"><button id="Continue" onclick="toggleDisplay('feelings1'); toggleDisplay('beats'); toggleDisplay('feelingsInput'); toggleDisplay('feelingsButton');">Continue</button></div>     
+                <!-- BEATS PAGE -->
+                <div style="display: none" id="beats">
+                    <div>Play beats</div>
+                    <div>
+                        <audio controls loop id="audio1">
+                            <source src="30bpm.m4a" type="audio/mp3">
+                        </audio>
+                    </div>
+                    <div>
+                        <audio controls loop id="audio2">
+                            <source src="45bpm.m4a" type="audio/mp3">
+                        </audio>
+                    </div>  
+                    <div id="bestbeat">
+                        <div id="star">
+                            <img src="http://purepng.com/public/uploads/large/purepng.com-gold-starstargeometricallydecagonconcavestardomyellow-stargold-1421526501440ojzfo.png" height="20px" width="20px">
+                        </div>
+                        <div id="beats">    
+                            <audio controls loop id="audio3">
+                                <source src="Beats.mp3" type="audio/mp3">
+                            </audio>
+                        </div>
+                        <div id="star">
+                                <img src="http://purepng.com/public/uploads/large/purepng.com-gold-starstargeometricallydecagonconcavestardomyellow-stargold-1421526501440ojzfo.png" height="20px" width="20px">
+                        </div>
+                    </div> 
+                    <div>
+                        <audio controls loop id="audio4">
+                            <source src="65bpm.m4a" type="audio/mp3">
+                        </audio>
+                    </div> 
+                    <div>
+                        <audio controls loop id="audio5">
+                            <source src="75bpm.m4a" type="audio/mp3">
+                        </audio>
+                    </div> 
+                    <div><button onclick="toggleDisplay('beats'); toggleDisplay('feelings2'); stopAudio(audio1); stopAudio(audio2); stopAudio(audio3); stopAudio(audio4); stopAudio(audio5)">Finish</button></div>
+                </div>
+                <!-- FEELINGS PAGE 2 -->
+                <div id="feelings2" style="display: none">
+                    How are you feeling now?
+                    <div><input type="text" value="feelings"></div>
+                    <div><button onclick="toggleDisplay('feelings2'); quotes('q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10')">Continue</button></div>        
+                </div>
+                <!-- QUOTE 1-->
+                <div id="q1" style="display: none;">
+                    "We seek peace, knowing that peace is the climate of freedom"<br>
+                    -Dwight D. Eisenhower
+                </div>
+                <!-- QUOTE 2-->
+                <div id="q2" style="display: none;">
+                    "Failure will never overtake me if my determination to succeed is strong enough"<br>
+                    -Og Mandino
+                </div>
+                <!-- QUOTE 3 -->
+                <div id="q3" style="display: none;">
+                    "Happiness can be found in the darkest of times, if one only remembers to turn on the light"<br>
+                    -Albus Dumbledore
+                </div>
+                <!-- QUOTE 4 -->
+                <div id="q4" style="display: none;">
+                    "We all make mistakes, have struggles, and even regret things in our past. But you are not your mistakes, you are not your struggles, and you are here NOW with the power to shape your day and your future"<br>
+                    -Steve Maraboli
+                </div>
+                <!-- QUOTE 5 -->
+                <div id="q5" style="display: none;">
+                    "Your fear is 100% dependent on you for its survival"<br>
+                    -Steve Maraboli
+                </div>
+                <!-- QUOTE 6 -->
+                <div id="q6" style="display: none;">
+                    "Do not let the behavior of others destroy your inner peace."<br>
+                    -Dalai Lama
+                </div>
+                <!-- QUOTE 7 -->
+                <div id="q7" style="display: none;">
+                    "The most common way people give up their power is by thinking they don't have any"<br>
+                    -Alice Walker
+                </div>
+                <!-- QUOTE 8 -->
+                <div id="q8" style="display: none;">
+                    "Whether you think you can or you think you can't, you're right"<br>
+                    -Henry Ford
+                </div>
+                <!-- QUOTE 9 -->
+                <div id="q9" style="display: none;">
+                    "If you hear a voice within you say "you cannot paint," then by all means paint and that voice will be silenced"<br>
+                    -Vincent Van Gogh
+                </div>
+                <!-- QUOTE 10 -->
+                <div id="q10" style="display: none;">
+                    "The only person you are destined to become is the person you decide to be"<br>
+                    -Ralph Waldo Emerson
+                </div>
+                <img id="cloud2" src="https://irp-cdn.multiscreensite.com/0e5c5b66/dms3rep/multi/mobile/animated-cloud-right-to-left-350x211-350x211.png" alt="cloud2" height="50" weight="50">
+            </div>
+            
+            <!-- STYLE -->
+            <style>
+                htmL,
+                body {
+                    height: 100%;
+                    margin: 0
+                }
+            
+                .box {
+                    display: flex;
+                    flex-flow: column;
+                    height: 100%;
+                }
+            
+                .box .row {
+                    border: 1px dotted grey;
+                }
+                
+                .box .row.content {
+                    flex: 1 1 auto;
+                    font-family: 'Trebuchet MS';
+                    font-size: xx-large;
+                    background-color: lightskyblue;
+                    color: white;
+                    height: 100%;
+                    width: 100%;
+                    border-color: black;
+                    border-width: 0px;
+                    text-align: center;
+                    flex-direction: column;
+                    display: flex; 
+                    justify-content: center; 
+                    align-items: center;
+                }
+
+                #animate {
+                    position: relative;
+                    background-color: lightskyblue;
+                    border-width: 0px;
+                }
+
+                #cloud2 {
+                    position: relative;
+                }
+
+                #bestbeat {
+                    display: flex;
+                    flex-flow: row;
+                }
+
+                #star {
+                    justify-content: center;
+                }
+            </style>
+        </div>
+        <!-- SCRIPT -->
+        <script>
+            function toggleClick(elementId) {   
+                var eles = document.getElementById('feelingsButton');
+                var div1 = document.getElementById('div1');
+                if (eles.style.display != "none") {
+                    div1.removeAttribute("onclick");
+                }
+            }
+
+            function toggleDisplay(elementId) {
+                var x = document.getElementById(elementId);
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                } 
+            }
+
+            function stopAudio(elementId) {
+                elementId.pause();
+                elementId.currentTime = 0;
+            }
+
+            var elem = document.getElementById('animate');
+            var pos = 0;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (pos == 450) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    elem.style.bottom = pos + 'px';
+                    elem.style.left = (pos-450) + 'px';
+                }
+            }
+
+            var abc = document.getElementById('cloud2');
+            var pos2 = 350;
+            var id2 = setInterval(frame2, 10);
+            function frame2() {
+                if (pos2 == 0) {
+                    clearInterval(id2);
+                } else {
+                    pos2--;
+                    abc.style.bottom = (pos2-400) + 'px';
+                    abc.style.left = pos2 + 'px';
+                }
+            }
+            function quotes(elementId) {
+                // var x = document.getElementById(elementId);
+                var y = Math.floor(Math.random() * 9);
+                if (y === 0) {
+                    if (q1.style.display === "none") {
+                        q1.style.display = "block";
+                    } else {
+                        q1.style.display = "none";
+                    } 
+                }
+                if (y === 1) {
+                    if (q2.style.display === "none") {
+                        q2.style.display = "block";
+                    } else {
+                        q2.style.display = "none";
+                    } 
+                }
+                if (y === 2) {
+                    if (q3.style.display === "none") {
+                        q3.style.display = "block";
+                    } else {
+                        q3.style.display = "none";
+                    } 
+                }
+                if (y === 3) {
+                    if (q4.style.display === "none") {
+                        q4.style.display = "block";
+                    } else {
+                        q4.style.display = "none";
+                    } 
+                }
+                if (y === 4) {
+                    if (q5.style.display === "none") {
+                        q5.style.display = "block";
+                    } else {
+                        q5.style.display = "none";
+                    } 
+                }
+                if (y === 5) {
+                    if (q6.style.display === "none") {
+                        q6.style.display = "block";
+                    } else {
+                        q6.style.display = "none";
+                    } 
+                }
+                if (y === 6) {
+                    if (q7.style.display === "none") {
+                        q7.style.display = "block";
+                    } else {
+                        q7.style.display = "none";
+                    } 
+                }
+                if (y === 7) {
+                    if (q8.style.display === "none") {
+                        q8.style.display = "block";
+                    } else {
+                        q8.style.display = "none";
+                    } 
+                }
+                if (y === 8) {
+                    if (q9.style.display === "none") {
+                        q9.style.display = "block";
+                    } else {
+                        q9.style.display = "none";
+                    } 
+                }
+                if (y === 9) {
+                    if (q10.style.display === "none") {
+                        q10.style.display = "block";
+                    } else {
+                        q10.style.display = "none";
+                    } 
+                }
+            }
+        </script>
+    </body>
+</html>

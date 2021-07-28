@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <body id="body" style="background-color: lightskyblue; height: 100%; display: flex; flex-direction: column">        
+        <!-- WELOCOME BUTTON-->
+        <div class="box">
+        <div onClick="toggleDisplay('div1'); toggleDisplay('Welcome')" id="Welcome" class="row content">
+            <div onClick="toggleDisplay('div1'); toggleDisplay('Welcome')" id="Welcome" class="row content">
+                Hello!<br> Welcome to Irenic
+        </div>
+        <style>
+            html,
+            body {
+                height: 100%;
+                margin: 0
+            }
+
+            .box {
+                display: flex;
+                flex-flow: column;
+                height: 100%;
+            }
+
+            .box .row {
+                border: 1px dotted grey;
+            }
+            .box .row.content {
+                flex: 1 1 auto;
+                font-family: 'Trebuchet MS';
+                font-size: xx-large;
+                background-color: lightskyblue;
+                color: white;
+                height: 100%;
+                width: 100%;
+                flex: 1 1 100%;
+                border-color: black;
+                border-width: 0px;
+                text-align: center;
+                vertical-align: center;
+                display: flex; 
+                justify-content: center; 
+                align-items: center;
+            }
+
+
+        </style>
+        </div>
+        <!-- FEELINGS PAGE (div1)-->
+        <div id="div1" style="display:none">
+            <h1>How are you feeling today?</h1><br>
+            <input type="text" value="feelings" id="feeling">
+            <button class="contButton" id="Continue" onclick="toggleDisplay('div1'); toggleDisplay('div2');">Continue</button>
+
+            <style>
+                h1 {text-align: center}
+                h1 {color: white}
+                h1 {font-size: x-large}
+                h1 {margin-top: 40%; margin-bottom: 10%}
+                input {font-size: large; font-family: 'Trebuchet MS'; size: 5cm}
+                input {height: 0.75cm}
+                
+
+                input[type="text"] {
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                .contButton {
+                    color: white;
+                    background-color: lightskyblue;
+                    border-width: 2px;
+                    width: 40%;
+                    height: 1cm;
+                    border-color: gray;
+                    margin-left: 30%;
+                    margin-right: 30%;
+                    font-weight: bold;
+                    margin-top: 0.5cm;
+                    font-size: medium;
+                    text-align: center;
+                }
+            </style>
+        </div>
+        <!-- BEATS PAGE (div2)-->
+        <div style="display: none" id="div2">
+            <h2>choose your beats</h2>
+            <audio controls loop id="audio">
+                <source src="https://www.soundjay.com/button/sounds/beep-01a.mp3" type="audio/mp3">
+            </audio>
+
+            <button id="finish" onclick="toggleDisplay('div2'); toggleDisplay('div3')">Finish</button>-->
+
+            <style>
+                h2 {text-align: center; color: white; font-family: 'Trebuchet MS'; font-size: xx-large}
+                audio {align-self: center}
+            </style>
+        </div>
+        <!-- FEELINGS PAGE 2.0 (div3) -->
+        <div id="div3" style="display:none">
+            <h1>How do you feel now?</h1><br>
+            <input type="text" value="feelings" id="feeling">
+            <button id="Continue" onclick="toggleDisplay('div3'); quotes('q1'); quotes('q3'); quotes('q2');">Continue</button>
+    
+            <style>
+                h1 {text-align: center}
+                h1 {color: white}
+                h1 {font-size: x-large}
+                h1 {margin-top: 50%; margin-bottom: 50%}
+                input {font-size: large; font-family: 'Trebuchet MS'; size: 5cm}
+    
+                input[type="text"] {
+                    display: block;
+                    margin: 0 auto;
+                }
+    
+                input {align-self: center}
+            </style>
+        </div>
+        <!-- QUOTE 1-->
+        <div id="q1" style="display: none">
+            <h1>"We seek peace, knowing that<br>peace is the climate of<br>freedom"</h1>
+            <h2>-Dwight D. Eisenhower</h2>
+
+            <style>
+                h1 {text-align: center}
+                h2 {font-family: 'Trebuchet MS'}
+                h2 {font-size: medium}
+                h2 {color: white}
+                h2 {align-content: center}
+            </style>
+        </div>
+        <!-- QUOTE 2-->
+        <div id="q2" style="display: none">
+            <h1>"Failure will never overtake me if my determination to succeed is strong enough"</h1>
+            <h2>-Og Mandino</h2>
+        </div>
+        <!-- QUOTE 3 -->
+        <div id="q3" style="display: none">
+            <h1>"Happiness can be found in the darkest of times, if one only remembers to turn on the light"</h1>
+            <h2>-Albus Dumbledore</h2>
+        </div>
+        <!-- QUOTE 4 -->
+        <div id="q4" style="display: none">
+            <h1>"We all make mistakes, have struggles, and even regret things in our past. But you are not your mistakes, you are not your struggles, and you are here NOW with the power to shape your day and your future"</h1>
+            <h2>-Steve Maraboli</h2>
+        </div>
+        <!-- QUOTE 5 -->
+        <div id="q5" style="display: none">
+            <h1>"Your fear is 100% dependent on you for its survival"</h1>
+            <h2>-Steve Maraboli</h2>
+        </div>
+        <!-- QUOTE 6 -->
+        <div id="q6" style="display: none">
+            <h1>"Life is about making an impact, not making an income"</h1>
+            <h2>-Kevin Kruse</h2>
+        </div>
+        <!-- QUOTE 7 -->
+        <div id="q7" style="display: none">
+            <h1>"The most common way people give up their power is by thinking they don't have any"</h1>
+            <h2>-Alice Walker</h2>
+        </div>
+        <!-- QUOTE 8 -->
+        <div id="q8" style="display: none">
+            <h1>"Whether you think you can or you think you can't, you're right"</h1>
+            <h2>-Henry Ford</h2>
+        </div>
+        <!-- QUOTE 9 -->
+        <div id="q9" style="display: none">
+            <h1>"If you hear a voice within you say "you cannot paint," then by all means paint and that voice will be silenced"</h1>
+            <h2>-Vincent Van Gogh</h2>
+        </div>
+        <!-- QUOTE 10 -->
+        <div id="q10" style="display: none">
+            <h1>"The only person you are destined to become is the person you decide to be"</h1>
+            <h2>-Ralph Waldo Emerson</h2>
+        </div>
+        <!-- JAVASCRIPT-->
+        <script>
+            function toggleDisplay(elementId) {
+                var x = document.getElementById(elementId);
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                } 
+            }
+
+            function quotes(elementId) {
+                // var x = document.getElementById(elementId);
+                var y = Math.floor(Math.random() * 2);
+                if (y === 0) {
+                    if (q1.style.display === "none") {
+                        q1.style.display = "block";
+                    } else {
+                        q1.style.display = "none";
+                    } 
+                }
+                if (y === 1) {
+                    if (q2.style.display === "none") {
+                        q2.style.display = "block";
+                    } else {
+                        q2.style.display = "none";
+                    } 
+                }
+                if (y === 2) {
+                    if (q3.style.display === "none") {
+                        q3.style.display = "block";
+                    } else {
+                        q3.style.display = "none";
+                    } 
+                }
+            }
+            //var x = document.getElementById("myAudio"); 
+        </script>
+    </body>
+</html>
